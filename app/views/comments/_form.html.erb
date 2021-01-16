@@ -1,0 +1,11 @@
+<div class="mt-5">
+  <h5>Comments</h5>
+  <%= form_with model: [@article, @article.comments.build] do |c| %>
+    <div class="mb-3">
+      <%= c.text_area :body, class: 'form-control' %>
+    </div>
+    <div class="mb-3">
+      <%= c.submit 'Comment', class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
