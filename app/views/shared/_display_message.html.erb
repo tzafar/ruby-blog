@@ -17,12 +17,12 @@
 <% end %>
 
 <% if (defined? errors) && unless errors.empty? %>
-  <div class="alert alert-<%= css_class %>" role="alert">
+  <div class="alert alert-<%= css_class %> mt-3" role="alert">
     <h4 class="alert-heading">Errors</h4>
     <ul>
-    <% errors.each do |message| %>
-      <li><%= message.attribute %> <%= message.message %></li>
-    <% end %>
+      <% errors.each do |message| %>
+        <li><%= message.attribute %> <%= message.message %></li>
+      <% end %>
     </ul>
   </div>
 <%

@@ -1,0 +1,16 @@
+<%= render 'shared/head' %>
+<h2>Sign in</h2>
+<%= form_with url: 'login', method: :post do |login_form| %>
+  <div class="mb-3">
+    <%= login_form.label :username, class: 'form-label' %>
+    <%= login_form.text_field :username, class: 'form-control', placeholder: 'Username' %>
+  </div>
+  <div class="mb-3">
+    <%= login_form.label :password, class: 'form-label' %>
+    <%= login_form.password_field :password, class: 'form-control', placeholder: 'Password' %>
+  </div>
+  <div class="mb-3 text-right">
+    <%= login_form.submit 'Login', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+<%= render 'shared/footer' %>

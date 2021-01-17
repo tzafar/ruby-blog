@@ -26,8 +26,8 @@ Things you may want to cover:
 ## Features
 
 - When comment is empty it should display a warning message
-- create db migration to add users table
-- create db migration to associate an article with a user
+- Done - create db migration to add users table
+- Done - create db migration to associate an article with a user
 - create user page with name, email, and password
 - login page with email, password
 - Show user name on all articles page

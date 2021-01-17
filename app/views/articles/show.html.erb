@@ -1,4 +1,4 @@
-<%= render 'head' %>
+<%= render 'shared/head' %>
 <%= render 'shared/display_message', :message => flash[:notice], :type => 'info' %>
 <div class="card mt-5 border-0">
   <div class="card-body">
@@ -12,4 +12,4 @@
 </div>
 <%= render 'comments/form' %>
 <%= render @article.comments.order('created_at DESC') %>
-<%= render 'articles/footer' %>
+<%= render 'shared/footer' %>
