@@ -9,6 +9,17 @@
         <li class="nav-item">
           <%= link_to 'New Article', new_article_path, class: 'nav-link' %>
         </li>
+        <li class="nav-item">
+          <%= link_to 'All Users', users_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'All Articles', articles_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <% if logged_in? %>
+            <%= link_to 'Logout', logout_path, :method => :delete, class: 'nav-link' %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>

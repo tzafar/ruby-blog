@@ -1,0 +1,17 @@
+<%= form_with model: user do |user| %>
+  <div class="mb-3">
+    <%= user.label :fullname, class: 'form-label' %>
+    <%= user.text_field :fullname, class: 'form-control', placeholder: 'Full Name' %>
+  </div>
+  <div class="mb-3">
+    <%= user.label :username, class: 'form-label' %>
+    <%= user.text_field :username, class: 'form-control', placeholder: 'Username' %>
+  </div>
+  <div class="mb-3">
+    <%= user.label :password, class: 'form-label' %>
+    <%= user.password_field :password, class: 'form-control', placeholder: 'Password' %>
+  </div>
+  <div class="mb-3 text-right">
+    <%= user.submit 'Signup', class: 'btn btn-primary' %>
+  </div>
+<% end %>
