@@ -1,5 +1,6 @@
-<h2>Sign up</h2>
 <div class="container">
+  <h2>Sign up</h2>
+  <%= render 'shared/errors', obj: @user %>
   <%= form_with model: @user do |user| %>
     <div class="mb-3">
       <%= user.label :fullname, class: 'form-label' %>

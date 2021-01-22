@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>All Users</h2>
+
+  <% @users.each do |user| %>
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="text-center mb-3">
+          <img width="80px" src="<%= get_user_image(user.username) %>" alt="Card image cap">
+        </div>
+        <div class="card text-center shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><%= user.fullname %></h5>
+            <a href="#" class="btn btn-primary">Edit</a>
+            <a href="#" class="btn btn-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
