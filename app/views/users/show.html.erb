@@ -14,18 +14,22 @@
       </div>
 
       <h2 class="text-center">Articles</h2>
-      <% @articles.each do |article| %>
-        <div class="card mt-2">
-          <div class="card-body">
-            <h5 class="card-title">
-              <%= link_to article.title, article %>
-            </h5>
-            <h6 class="card-subtitle mb-2 text-muted">by <%= article.user.fullname %></h6>
-            <p class="card-text"><%= article.body %></p>
-            <%= link_to 'Edit', edit_article_path(article), class: 'card-link' %>
-            <%= link_to 'Delete', article_path(article), method: :delete, class: 'card-link' %>
+      <% if (!@articles.empty?) %>
+        <% @articles.each do |article| %>
+          <div class="card mt-2">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= link_to article.title, article %>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted">by <%= article.user.fullname %></h6>
+              <p class="card-text"><%= article.body %></p>
+              <%= link_to 'Edit', edit_article_path(article), class: 'card-link' %>
+              <%= link_to 'Delete', article_path(article), method: :delete, class: 'card-link' %>
+            </div>
           </div>
-        </div>
+        <% end %>
+      <% else %>
+        <p>You dont have any articles yet.</p>
       <% end %>
     </div>
   </div>
