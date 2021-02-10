@@ -50,8 +50,8 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user
-      flash[:alert] = "You are not allowed to perform this operations"
+    if current_user != @user && !current_user.isAdmin
+      flash[:alert] = "You are not allowed to perform this operations#{@user.isAdmin} #{@user.username}"
       redirect_to @user
     end
   end
