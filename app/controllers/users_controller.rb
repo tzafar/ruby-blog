@@ -3,7 +3,7 @@ require 'bcrypt'
 class UsersController < ApplicationController
 
   before_action :set_current_user, only: [:show, :destroy, :update, :edit]
-  before_action :require_user, except: [:index, :new]
+  before_action :require_user, except: [:index, :new, :create]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
@@ -18,6 +18,8 @@ class UsersController < ApplicationController
     user_hash = params.require(:user).permit(:fullname, :username, :password)
     @user = User.new(user_hash)
     if @user.save
+      session[:user_id] = @user.id
+      flash[:notice] = "Signup successful!"
       redirect_to @user
     else
       render :new
