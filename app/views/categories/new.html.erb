@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Create a new Category</h2>
+  <%= render 'shared/errors', obj: @category %>
+  <%= form_with model: @category do |category| %>
+    <div class="mb-3">
+      <%= category.label :title, "Category title", class: 'form-label' %>
+      <%= category.text_field :title, class: 'form-control', placeholder: 'Category title' %>
+    </div>
+    <div class="mb-3 text-right">
+      <%= category.submit 'Add Category', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
