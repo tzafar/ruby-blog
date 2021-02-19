@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    updated_article = params.require(:article).permit(:title, :body)
+    updated_article = params.require(:article).permit(:title, :body, category_ids: [])
     if @article.update(updated_article)
       redirect_to @article
     else

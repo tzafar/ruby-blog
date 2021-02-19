@@ -2,6 +2,9 @@
   <div class="card mt-5 border-0">
     <div class="card-body">
       <h1 class="card-title"><%= @article.title %></h1>
+      <% if @article.categories.any? %>
+        <div class="mb-3"><%= render @article.categories %></div>
+      <% end %>
       <h6 class="card-subtitle mb-2 text-muted font-italic font-weight-bold">by Toseef - <%= @article.created_at %></h6>
       <p class="card-text"><%= @article.body %></p>
     </div>
