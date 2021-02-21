@@ -1,3 +1,5 @@
 <!--<span class="badge badge-info mr-1 ">-->
-<%= link_to category.title, category_url(category), class: 'badge badge-info' %>
+<%= link_to(category, { class: 'badge badge-info' }) do %>
+  <i class="fas fa-hashtag"></i> <%= category.title %>
+<% end %>
 <!--</span>-->

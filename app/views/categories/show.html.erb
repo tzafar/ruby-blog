@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <div class="mt-4">
-      <h2 class="text-center d-block w-auto"><%= @category.title %></h2>
+      <h2 class="text-center d-block w-auto"><i class="fas fa-hashtag"></i><%= @category.title %></h2>
     </div>
     <h2 class="text-left d-block w-auto"><%= "Articles under #{@category.title}" %></h2>
     <%= will_paginate @articles, list_classes: %w(pagination justify-content-center), previous_label: "Previous", next_label: "Next" %>
