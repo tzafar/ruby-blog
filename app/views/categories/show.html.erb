@@ -4,6 +4,11 @@
       <h2 class="text-center d-block w-auto"><%= @category.title %></h2>
     </div>
     <h2 class="text-left d-block w-auto"><%= "Articles under #{@category.title}" %></h2>
-    <%= render @category.articles %>
+    <%= will_paginate @articles, list_classes: %w(pagination justify-content-center), previous_label: "Previous", next_label: "Next" %>
+
+    <%= render 'articles/article' %>
+
+    <%= will_paginate @articles, list_classes: %w(pagination justify-content-center), previous_label: "Previous", next_label: "Next" %>
+
   </div>
 </div>
