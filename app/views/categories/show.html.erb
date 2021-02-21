@@ -1,12 +1,9 @@
 <div class="container">
   <div>
     <div class="mt-4">
-      <h2 class="text-center d-block w-auto">Categories</h2>
-      <div class="card text-center shadow mb-5 bg-white rounded">
-        <div class="card-body">
-          <h5 class="card-title"><%= @category.title %></h5>
-        </div>
-      </div>
+      <h2 class="text-center d-block w-auto"><%= @category.title %></h2>
     </div>
+    <h2 class="text-left d-block w-auto"><%= "Articles under #{@category.title}" %></h2>
+    <%= render @category.articles %>
   </div>
 </div>
